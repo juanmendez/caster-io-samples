@@ -4,4 +4,4 @@ This is a sample library used to demonstrate the creation of a Gradle Plugin ins
 
 ### Version Info
 
-pluginBasics:0.0
+pluginBasics:0.0.0
