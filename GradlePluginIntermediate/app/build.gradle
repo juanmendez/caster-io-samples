@@ -4,13 +4,12 @@ apply plugin: 'com.android.application'
 apply plugin: BumpReadMeVersionPlugin
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "info.adavis.gradleplugin"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion 21
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
     }
@@ -23,12 +22,11 @@ android {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile project(':mylibrary')
+    testImplementation 'junit:junit:4.12'
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation project(':mylibrary')
 }
 
 bumpReadMeVersion {
     overrideContent = 'app:'
 }
-
