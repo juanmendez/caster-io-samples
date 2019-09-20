@@ -1,8 +1,6 @@
 package info.adavis.gradleplugin;
 
 import android.os.Bundle;
-
-import info.adavis.gradlepluginint.R;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
