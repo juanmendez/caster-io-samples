@@ -1,6 +1,6 @@
 # Gradle Plugin Basics
 
-This is a sample library used to demonstrate the creation of a Gradle Plugin inside of your build.gradle file.
+This fork from tutorial from [caster.io](https://caster.io/lessons/creating-a-gradle-plugin) is intended to be updated and also show the tutorial using `kotlin` as well.
 
 Branches:
 - groovy/00.pluginBasics (using androidX, and kotlin)
@@ -8,7 +8,5 @@ Branches:
 
 - groovy/01.internalGradlePlugin 
   - `buildSrc` module was missing `build.gradle` causing internal plugin not to be found`
-
-### Version Info
-
-pluginBasics:0.0.0
+- kts/01.internalGradlePlugin
+  - there were several irregularities from the `Groovy` demo which I needed to fix for `kotlin` version to work
