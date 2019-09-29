@@ -1,7 +1,5 @@
-import info.adavis.plugin.BumpReadMeVersionPlugin
-
-apply plugin: 'com.android.application'
-apply plugin: BumpReadMeVersionPlugin
+apply plugin: "com.android.application"
+apply plugin: "info.adavis.bumpReadMe"
 
 android {
     compileSdkVersion 29
@@ -16,17 +14,18 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:4.12"
     implementation "androidx.appcompat:appcompat:1.1.0"
-    implementation project(':mylibrary')
+    implementation project(":mylibrary")
 }
 
 bumpReadMeVersion {
-    overrideContent = 'app:'
+    overrideContent = "app:"
+    versionName = project.android.defaultConfig.versionName
 }
