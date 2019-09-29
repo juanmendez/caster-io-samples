@@ -10,3 +10,5 @@ Branches:
   - `buildSrc` module was missing `build.gradle` causing internal plugin not to be found`
 - kts/01.internalGradlePlugin
   - there were several irregularities from the `Groovy` demo which I needed to fix for `kotlin` version to work
+
+- groovy/02.externalGradlePlugin
