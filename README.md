@@ -12,3 +12,4 @@ Branches:
   - there were several irregularities from the `Groovy` demo which I needed to fix for `kotlin` version to work
 
 - groovy/02.externalGradlePlugin
+- kts/02.externalGradlePlugin (this one was a tough one to turn it all from Groovy, specially `project.evaluate()` is no longer available
