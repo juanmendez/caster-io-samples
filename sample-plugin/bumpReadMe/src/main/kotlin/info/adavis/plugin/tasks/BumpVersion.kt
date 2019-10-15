@@ -1,4 +1,4 @@
-package info.adavis.plugin
+package info.adavis.plugin.tasks
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
@@ -12,7 +12,7 @@ open class BumpVersion : DefaultTask() {
     var overrideContent = ""
 
     init {
-        group = "plugin v2"
+        group = "plugin v4"
         description = "Updates ReadMe file with the latest version"
     }
 
@@ -27,8 +27,8 @@ open class BumpVersion : DefaultTask() {
     fun bump() {
         getReadMe()?.let { readMeFile ->
             val contents = readMeFile.readText(charset = Charsets.UTF_8).replace(
-                """$overrideContent.*""".toRegex(),
-                "$overrideContent$versionName"
+                    """$overrideContent.*""".toRegex(),
+                    "$overrideContent$versionName"
             )
 
             readMeFile.writeText(contents, Charsets.UTF_8)

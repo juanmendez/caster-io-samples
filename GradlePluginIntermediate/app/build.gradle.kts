@@ -1,18 +1,12 @@
-import info.adavis.plugin.BumpReadMeVersionPlugin
-import info.adavis.plugin.BumpReadMeVersionPlugin.Companion.BUMP_VERSION
-import info.adavis.plugin.BumpReadMeVersionPlugin.Companion.DISPLAY_VERSION
-import info.adavis.plugin.BumpVersion
-import info.adavis.plugin.DisplayVersion
-
-apply<BumpReadMeVersionPlugin>()
+import org.gradle.kotlin.dsl.bumpReadMeVersion
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
+    id("info.adavis.bumpReadMe")
 }
-
 android {
     compileSdkVersion(29)
 
@@ -37,11 +31,7 @@ dependencies {
     testImplementation("junit:junit:4.12")
 }
 
-tasks.getByName<DisplayVersion>(DISPLAY_VERSION) {
-    versionName = android.defaultConfig.versionName
-}
-
-tasks.getByName<BumpVersion>(BUMP_VERSION) {
+bumpReadMeVersion {
     overrideContent = "app:"
-    versionName = android.defaultConfig.versionName
+    versionName = android.defaultConfig.versionName ?: "-1.0"
 }
